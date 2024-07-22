@@ -51,7 +51,14 @@ CREATE TABLE historique_reservation (
 
 CREATE TABLE user (
                       id BIGINT AUTO_INCREMENT PRIMARY KEY,
-                      username VARCHAR(50) NOT NULL,
+                      firstname VARCHAR(50) NOT NULL,
+                      lastname VARCHAR(50) NOT NULL,
+                      email VARCHAR(100) NOT NULL,
                       password VARCHAR(100) NOT NULL,
                       role VARCHAR(50) NOT NULL
+);
+CREATE TABLE revoked_token (
+                               id BIGINT AUTO_INCREMENT PRIMARY KEY,
+                               token VARCHAR(255) NOT NULL,
+                               revoked_at TIMESTAMP NOT NULL
 );
